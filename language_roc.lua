@@ -70,7 +70,6 @@ syntax.add {
     ["if"] = "keyword",
     ["then"] = "keyword",
     ["else"] = "keyword",
-    [""] = "keyword",
     ["when"] = "keyword",
     ["as"] = "keyword",
     ["is"] = "keyword",
