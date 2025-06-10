@@ -1,5 +1,5 @@
 # lite-xl-roc
-Roc syntax highlighting for the Lite XL text editor.
+[Roc](https://github.com/roc-lang) language syntax highlighting for the Lite XL text editor.
 
 Adjust pattern types to match colors to your theme/taste.
 
