@@ -1,0 +1,12 @@
+{
+  "addons": [
+    {
+      "id": "language_roc",
+      "path": "./language_roc.lua",
+      "name": "Language Roc",
+      "description": "Syntax for the [Roc](http://www.roc-lang.org/) programming language",
+      "version": "0.2.0",
+      "mod_version": "3",
+    }
+  ]
+}
