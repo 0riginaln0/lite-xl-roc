@@ -15,15 +15,6 @@ local syntax = require "core.syntax"
     function
 ]]
 
-syntax.add {
-  name = "Roc String Interpolation",
-  files = "%.roc__string_interp$",
-  patterns = {
-    { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" },
-    { pattern = "[^ ]",              type = "string" }
-  },
-  symbols = {}
-}
 
 syntax.add {
   name = "Roc",
@@ -32,7 +23,18 @@ syntax.add {
   patterns = {
     { pattern = "#.*\n",                 type = "comment" },
     { pattern = "%f[%a]%u%w*",           type = "literal" }, -- Roc Tags, Module imports
-    { pattern = { '"', '"', '\\' },      type = "string",  syntax = ".roc__string_interp" },
+    { 
+      pattern = { '"', '"', '\\' },
+      type = "string",
+      syntax = {
+      	patterns = {
+          { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" },
+          { pattern = "[^$\"]+",           type = "string"},
+          { pattern = "[$\"]",             type = "string"},
+        },
+        symbols = {}
+      }
+    },
 
     { pattern = ":",                     type = "operator" },
     { pattern = "->",                    type = "operator" },
