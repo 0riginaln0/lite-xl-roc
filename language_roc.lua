@@ -21,7 +21,7 @@ syntax.add {
   files = "%.roc$",
   comment = "#",
   patterns = {
-    { pattern = "#.*\n",                 type = "comment" },
+    { pattern = "#.*",                 type = "comment" },
     { pattern = "%f[%a]%u%w*",           type = "literal" }, -- Roc Tags, Module imports
     { 
       pattern = { '"', '"', '\\' },
@@ -29,8 +29,8 @@ syntax.add {
       syntax = {
       	patterns = {
           { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" },
-          { pattern = "[^$\"]+",           type = "string"},
-          { pattern = "[$\"]",             type = "string"},
+          { pattern = '[^$"]+',           type = "string"},
+          { pattern = '[$"]',             type = "string"},
         },
         symbols = {}
       }
