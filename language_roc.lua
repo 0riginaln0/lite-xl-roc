@@ -17,7 +17,6 @@ Here is the list of all pattern types which could be used in themes:
     function
 
 Here you can see which colors are used for each pattern in your chosen theme:
-    https://github.com/lite-xl/lite-xl/tree/master/data/colors
     https://github.com/lite-xl/lite-xl-colors/tree/master/colors
 
 To change the color of a certain syntax, change its pattern type.
@@ -83,12 +82,12 @@ syntax.add {
     { pattern = "<",    type = "operator" },
     { pattern = "@",    type = "operator" },
 
-    { pattern = "%(",   type = "function" }, -- (
-    { pattern = "%)",   type = "function" }, -- )
-    { pattern = "%[",   type = "function" }, -- [
-    { pattern = "%]",   type = "function" }, -- ]
-    { pattern = "%{",   type = "function" }, -- {
-    { pattern = "%}",   type = "function" }, -- }
+    { pattern = "%(",   type = "normal" }, -- (
+    { pattern = "%)",   type = "normal" }, -- )
+    { pattern = "%[",   type = "normal" }, -- [
+    { pattern = "%]",   type = "normal" }, -- ]
+    { pattern = "%{",   type = "normal" }, -- {
+    { pattern = "%}",   type = "normal" }, -- }
   },
   symbols = {
     ["if"]         = "keyword",
