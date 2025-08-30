@@ -61,32 +61,33 @@ syntax.add {
     { pattern = "!", type = "keyword2" },
     { pattern = "?", type = "keyword2" },
 
-    { pattern = ":",  type = "operator" },
-    { pattern = "->", type = "operator" },
-    { pattern = "=>", type = "operator" },
-    { pattern = "|>", type = "operator" },
-    { pattern = ",",  type = "operator" },
-    { pattern = "%.", type = "operator" }, -- .
-    { pattern = "=",  type = "operator" },
-    { pattern = "==", type = "operator" },
-    { pattern = "!=", type = "operator" },
-    { pattern = "||", type = "operator" },
-    { pattern = "&&", type = "operator" },
-    { pattern = "|",  type = "operator" },
-    { pattern = "+",  type = "operator" },
-    { pattern = "-",  type = "operator" },
-    { pattern = "*",  type = "operator" },
-    { pattern = "/",  type = "operator" },
-    { pattern = ">",  type = "operator" },
-    { pattern = "<",  type = "operator" },
-    { pattern = "@",  type = "operator" },
+    { pattern = ":",    type = "operator" },
+    { pattern = "->",   type = "operator" },
+    { pattern = "=>",   type = "operator" },
+    { pattern = "|>",   type = "operator" },
+    { pattern = ",",    type = "operator" },
+    { pattern = "%.%.", type = "operator" }, -- ..
+    { pattern = "%.",   type = "operator" }, -- .
+    { pattern = "=",    type = "operator" },
+    { pattern = "==",   type = "operator" },
+    { pattern = "!=",   type = "operator" },
+    { pattern = "||",   type = "operator" },
+    { pattern = "&&",   type = "operator" },
+    { pattern = "|",    type = "operator" },
+    { pattern = "+",    type = "operator" },
+    { pattern = "-",    type = "operator" },
+    { pattern = "*",    type = "operator" },
+    { pattern = "/",    type = "operator" },
+    { pattern = ">",    type = "operator" },
+    { pattern = "<",    type = "operator" },
+    { pattern = "@",    type = "operator" },
 
-    { pattern = "%(", type = "function" }, -- (
-    { pattern = "%)", type = "function" }, -- )
-    { pattern = "%[", type = "function" }, -- [
-    { pattern = "%]", type = "function" }, -- ]
-    { pattern = "%{", type = "function" }, -- {
-    { pattern = "%}", type = "function" }, -- }
+    { pattern = "%(",   type = "function" }, -- (
+    { pattern = "%)",   type = "function" }, -- )
+    { pattern = "%[",   type = "function" }, -- [
+    { pattern = "%]",   type = "function" }, -- ]
+    { pattern = "%{",   type = "function" }, -- {
+    { pattern = "%}",   type = "function" }, -- }
   },
   symbols = {
     ["if"]         = "keyword",
