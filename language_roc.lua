@@ -49,8 +49,7 @@ syntax.add {
       type = "string",
       syntax = {
       	patterns = {
-      	  -- Interpolation
-          { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" },
+          { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" }, -- Interpolation
           { pattern = '[^$"]+',            type = "string"},
           { pattern = '[$"]',              type = "string"},
         },
@@ -61,56 +60,56 @@ syntax.add {
     { pattern = "[%l_][%a_%d]*",         type = "normal" }, -- constants, variables and so on
     { pattern = "%d[xb%_acdef%.%d]*%d*", type = "number" }, -- Numbers
 
-    { pattern = "!",                     type = "keyword2" },
-    { pattern = "?",                     type = "keyword2" },
+    { pattern = "!", type = "keyword2" },
+    { pattern = "?", type = "keyword2" },
     
-    { pattern = ":",                     type = "operator" },
-    { pattern = "->",                    type = "operator" },
-    { pattern = "=>",                    type = "operator" },
-    { pattern = "|>",                    type = "operator" },
-    { pattern = ",",                     type = "operator" },
-    { pattern = "%.",                    type = "operator" }, -- .
-    { pattern = "=",                     type = "operator" },
-    { pattern = "==",                    type = "operator" },
-    { pattern = "!=",                    type = "operator" },
-    { pattern = "||",                    type = "operator" },
-    { pattern = "&&",                    type = "operator" },
-    { pattern = "|",                     type = "operator" },
-    { pattern = "+",                     type = "operator" },
-    { pattern = "-",                     type = "operator" },
-    { pattern = "*",                     type = "operator" },
-    { pattern = "/",                     type = "operator" },
-    { pattern = ">",                     type = "operator" },
-    { pattern = "<",                     type = "operator" },
-    { pattern = "@",                     type = "operator" },
+    { pattern = ":",  type = "operator" },
+    { pattern = "->", type = "operator" },
+    { pattern = "=>", type = "operator" },
+    { pattern = "|>", type = "operator" },
+    { pattern = ",",  type = "operator" },
+    { pattern = "%.", type = "operator" }, -- .
+    { pattern = "=",  type = "operator" },
+    { pattern = "==", type = "operator" },
+    { pattern = "!=", type = "operator" },
+    { pattern = "||", type = "operator" },
+    { pattern = "&&", type = "operator" },
+    { pattern = "|",  type = "operator" },
+    { pattern = "+",  type = "operator" },
+    { pattern = "-",  type = "operator" },
+    { pattern = "*",  type = "operator" },
+    { pattern = "/",  type = "operator" },
+    { pattern = ">",  type = "operator" },
+    { pattern = "<",  type = "operator" },
+    { pattern = "@",  type = "operator" },
 
-    { pattern = "%(",                    type = "function" }, -- (
-    { pattern = "%)",                    type = "function" }, -- )
-    { pattern = "%[",                    type = "function" }, -- [
-    { pattern = "%]",                    type = "function" }, -- ]
-    { pattern = "%{",                    type = "function" }, -- {
-    { pattern = "%}",                    type = "function" }, -- }
+    { pattern = "%(", type = "function" }, -- (
+    { pattern = "%)", type = "function" }, -- )
+    { pattern = "%[", type = "function" }, -- [
+    { pattern = "%]", type = "function" }, -- ]
+    { pattern = "%{", type = "function" }, -- {
+    { pattern = "%}", type = "function" }, -- }
 
   },
   symbols = {
-    ["if"] = "keyword",
-    ["then"] = "keyword",
-    ["else"] = "keyword",
-    ["when"] = "keyword",
-    ["as"] = "keyword",
-    ["is"] = "keyword",
-    ["dbg"] = "keyword",
-    ["import"] = "keyword",
-    ["expect"] = "keyword",
-    ["return"] = "keyword",
-    ["crash"] = "keyword",
-    ["and"] = "keyword",
-    ["or"] = "keyword",
-    ["exposing"] = "keyword",
+    ["if"]         = "keyword",
+    ["then"]       = "keyword",
+    ["else"]       = "keyword",
+    ["when"]       = "keyword",
+    ["as"]         = "keyword",
+    ["is"]         = "keyword",
+    ["dbg"]        = "keyword",
+    ["import"]     = "keyword",
+    ["expect"]     = "keyword",
+    ["return"]     = "keyword",
+    ["crash"]      = "keyword",
+    ["and"]        = "keyword",
+    ["or"]         = "keyword",
+    ["exposing"]   = "keyword",
     ["implements"] = "keyword",
-    ["where"] = "keyword",
-    ["platform"] = "keyword",
-    ["module"] = "keyword",
-    ["app"] = "keyword",
+    ["where"]      = "keyword",
+    ["platform"]   = "keyword",
+    ["module"]     = "keyword",
+    ["app"]        = "keyword",
   },
 }
