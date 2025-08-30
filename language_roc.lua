@@ -3,6 +3,8 @@
 local syntax = require "core.syntax"
 
 --[[
+Here is the list of all pattern types which have their own color in different themes:
+
     normal
     symbol
     comment
@@ -13,6 +15,26 @@ local syntax = require "core.syntax"
     string
     operator
     function
+    
+Change the pattern type in the corresponding pattern to change its color.
+
+for example:
+
+  { pattern = "%.",                    type = "normal" },
+
+will change the color of the dot.
+
+You can see the color changes after:
+1. ctrl+shift+p
+     Core: Reload Module
+   	plugins.language_roc
+
+2. save current roc file
+
+
+If you want to understand how the Lua Patterns work, visit https://gitspartv.github.io/lua-patterns/
+
+
 ]]
 
 
@@ -21,32 +43,40 @@ syntax.add {
   files = "%.roc$",
   comment = "#",
   patterns = {
-    { pattern = "#.*",                 type = "comment" },
-    { pattern = "%f[%a]%u%w*",           type = "literal" }, -- Roc Tags, Module imports
+    { pattern = "#.*",         type = "comment" }, -- # Comments
+    { pattern = "%f[%a]%u%w*", type = "literal" }, -- Roc Tags, Module Imports.
     { 
       pattern = { '"', '"', '\\' },
       type = "string",
       syntax = {
       	patterns = {
+      	  -- Interpolation
           { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" },
-          { pattern = '[^$"]+',           type = "string"},
-          { pattern = '[$"]',             type = "string"},
+          { pattern = '[^$"]+',            type = "string"},
+          { pattern = '[$"]',              type = "string"},
         },
         symbols = {}
       }
     },
 
+    { pattern = "[%l_][%a_%d]*",         type = "normal" }, -- constants, variables and so on
+    { pattern = "%d[xb%_acdef%.%d]*%d*", type = "number" }, -- Numbers
+
+    { pattern = "!",                     type = "keyword2" },
+    { pattern = "?",                     type = "keyword2" },
+    
     { pattern = ":",                     type = "operator" },
     { pattern = "->",                    type = "operator" },
     { pattern = "=>",                    type = "operator" },
     { pattern = "|>",                    type = "operator" },
     { pattern = ",",                     type = "operator" },
-    { pattern = "%.",                    type = "operator" },
+    { pattern = "%.",                    type = "operator" }, -- .
     { pattern = "=",                     type = "operator" },
     { pattern = "==",                    type = "operator" },
     { pattern = "!=",                    type = "operator" },
-    { pattern = "|",                     type = "operator" },
+    { pattern = "||",                    type = "operator" },
     { pattern = "&&",                    type = "operator" },
+    { pattern = "|",                     type = "operator" },
     { pattern = "+",                     type = "operator" },
     { pattern = "-",                     type = "operator" },
     { pattern = "*",                     type = "operator" },
@@ -55,18 +85,13 @@ syntax.add {
     { pattern = "<",                     type = "operator" },
     { pattern = "@",                     type = "operator" },
 
-    { pattern = "%(",                    type = "function" },
-    { pattern = "%)",                    type = "function" },
-    { pattern = "%[",                    type = "function" },
-    { pattern = "%]",                    type = "function" },
-    { pattern = "%{",                    type = "function" },
-    { pattern = "%}",                    type = "function" },
+    { pattern = "%(",                    type = "function" }, -- (
+    { pattern = "%)",                    type = "function" }, -- )
+    { pattern = "%[",                    type = "function" }, -- [
+    { pattern = "%]",                    type = "function" }, -- ]
+    { pattern = "%{",                    type = "function" }, -- {
+    { pattern = "%}",                    type = "function" }, -- }
 
-    { pattern = "[%l_][%a_%d]*",         type = "normal" }, -- Just names
-    { pattern = "%d[xb%_acdef%.%d]*%d*", type = "number" }, -- Numbers
-
-    { pattern = "!",                     type = "keyword2" },
-    { pattern = "?",                     type = "keyword2" },
   },
   symbols = {
     ["if"] = "keyword",
