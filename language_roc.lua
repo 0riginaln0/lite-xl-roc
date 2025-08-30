@@ -3,7 +3,7 @@
 local syntax = require "core.syntax"
 
 --[[
-Here is the list of all pattern types which have their own color in different themes:
+Here is the list of all pattern types which could be used in themes:
 
     normal
     symbol
@@ -15,13 +15,14 @@ Here is the list of all pattern types which have their own color in different th
     string
     operator
     function
-    
-Change the pattern type in the corresponding pattern to change its color.
 
-for example:
+You can see what patterns are used in your theme of choice here:
+    https://github.com/lite-xl/lite-xl-colors/tree/master/colors
 
+To change the color of a certain syntax, change its pattern type.
+
+Example:
   { pattern = "%.",                    type = "normal" },
-
 will change the color of the dot.
 
 You can see the color changes after:
@@ -31,10 +32,8 @@ You can see the color changes after:
 
 2. save current roc file
 
-
-If you want to understand how the Lua Patterns work, visit https://gitspartv.github.io/lua-patterns/
-
-
+If you want to understand how the Lua Patterns work, visit:
+    https://gitspartv.github.io/lua-patterns/
 ]]
 
 
