@@ -62,7 +62,7 @@ syntax.add {
     { pattern = "%{",                    type = "function" },
     { pattern = "%}",                    type = "function" },
 
-    { pattern = "%l[%a_%d]*",            type = "normal" }, -- Just names
+    { pattern = "[%l_][%a_%d]*",         type = "normal" }, -- Just names
     { pattern = "%d[xb%_acdef%.%d]*%d*", type = "number" }, -- Numbers
 
     { pattern = "!",                     type = "keyword2" },
