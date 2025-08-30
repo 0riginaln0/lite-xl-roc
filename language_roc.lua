@@ -43,6 +43,18 @@ syntax.add {
     { pattern = "#.*",         type = "comment" }, -- # Comments
     { pattern = "%f[%a]%u%w*", type = "literal" }, -- Roc Tags, Module Imports.
     {
+      pattern = { '"""', '"""', '\\' },
+      type = "string",
+      syntax = {
+        patterns = {
+          { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" }, -- Interpolation
+          { pattern = '[^$"]+',            type = "string"},
+          { pattern = '[$"]',              type = "string"},
+        },
+        symbols = {}
+      }
+    },
+    {
       pattern = { '"', '"', '\\' },
       type = "string",
       syntax = {
