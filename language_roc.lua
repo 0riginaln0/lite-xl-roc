@@ -28,14 +28,12 @@ will change the color of the dot.
 You can see the color changes after:
 1. ctrl+shift+p
      Core: Reload Module
-   	plugins.language_roc
-
+       plugins.language_roc
 2. save current roc file
 
 If you want to understand how the Lua Patterns work, visit:
     https://gitspartv.github.io/lua-patterns/
 ]]
-
 
 syntax.add {
   name = "Roc",
@@ -44,11 +42,11 @@ syntax.add {
   patterns = {
     { pattern = "#.*",         type = "comment" }, -- # Comments
     { pattern = "%f[%a]%u%w*", type = "literal" }, -- Roc Tags, Module Imports.
-    { 
+    {
       pattern = { '"', '"', '\\' },
       type = "string",
       syntax = {
-      	patterns = {
+        patterns = {
           { pattern = { "${", "}", "\\" }, type = "keyword", syntax = ".roc" }, -- Interpolation
           { pattern = '[^$"]+',            type = "string"},
           { pattern = '[$"]',              type = "string"},
@@ -62,7 +60,7 @@ syntax.add {
 
     { pattern = "!", type = "keyword2" },
     { pattern = "?", type = "keyword2" },
-    
+
     { pattern = ":",  type = "operator" },
     { pattern = "->", type = "operator" },
     { pattern = "=>", type = "operator" },
@@ -89,7 +87,6 @@ syntax.add {
     { pattern = "%]", type = "function" }, -- ]
     { pattern = "%{", type = "function" }, -- {
     { pattern = "%}", type = "function" }, -- }
-
   },
   symbols = {
     ["if"]         = "keyword",
